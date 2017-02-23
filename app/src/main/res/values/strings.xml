@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Habit Tracking</string>
+    <string name="add_habit_layout_name">Add Habit</string>
 
     <!-- ActionBar Menu -->
     <string name="insert_dummy_data">Insert Dummy Data</string>
