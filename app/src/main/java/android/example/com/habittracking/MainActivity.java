@@ -36,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        displayData();
+    }
+
     public void createDummyData() {
         mDbHelper = new HabitDbHelper(this);
 
@@ -99,6 +105,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void deleteData() {
+        mDbHelper = new HabitDbHelper(this);
+
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        db.delete(HabitEntry.TABLE_NAME, null, null);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -120,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
                 displayData();
                 return true;
             case R.id.delete_all_data_item:
+                deleteData();
+                displayData();
                 return true;
         }
 

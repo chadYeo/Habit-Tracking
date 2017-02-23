@@ -38,4 +38,5 @@ public class HabitDbHelper extends SQLiteOpenHelper{
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
     }
+
 }
