@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="android.example.com.habittracking.MainActivity">
+    <item
+        android:id="@+id/insert_dummy_data_item"
+        android:orderInCategory="100"
+        android:title="@string/insert_dummy_data"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/delete_all_data_item"
+        android:orderInCategory="100"
+        android:title="@string/delete_all_data"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Habit Tracking</string>
+
+    <!-- ActionBar Menu -->
+    <string name="insert_dummy_data">Insert Dummy Data</string>
+    <string name="delete_all_data">Delete All Data</string>
+</resources>
