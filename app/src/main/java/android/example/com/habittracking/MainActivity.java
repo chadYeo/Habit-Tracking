@@ -17,7 +17,7 @@ import static android.example.com.habittracking.data.HabitContract.HabitEntry;
 
 public class MainActivity extends AppCompatActivity {
 
-    HabitDbHelper mDbHelper;
+    private HabitDbHelper mDbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
