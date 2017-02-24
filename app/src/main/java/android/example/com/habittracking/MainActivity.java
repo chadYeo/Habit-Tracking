@@ -42,22 +42,8 @@ public class MainActivity extends AppCompatActivity {
         displayData();
     }
 
-    public void createDummyData() {
+    private Cursor read() {
         mDbHelper = new HabitDbHelper(this);
-
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(HabitEntry.COLUMN_HABIT_NAME, "Dumb Dumb");
-        values.put(HabitEntry.COLUMN_HABIT_DATE, "77/77/7777");
-        values.put(HabitEntry.COLUMN_HABIT_NUMBER, 7);
-
-        long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
-    }
-
-    public void displayData() {
-        mDbHelper = new HabitDbHelper(this);
-
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         String[] projection = {
@@ -76,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null
         );
+
+        return cursor;
+    }
+
+    public void displayData() {
+        Cursor cursor = read();
 
         TextView mListTextView = (TextView) findViewById(R.id.list_textView);
 
@@ -105,14 +97,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void deleteData() {
-        mDbHelper = new HabitDbHelper(this);
-
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-        db.delete(HabitEntry.TABLE_NAME, null, null);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -140,5 +124,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //This creates the Dummy data
+    public void createDummyData() {
+        mDbHelper = new HabitDbHelper(this);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(HabitEntry.COLUMN_HABIT_NAME, "Dumb Dumb");
+        values.put(HabitEntry.COLUMN_HABIT_DATE, "77/77/7777");
+        values.put(HabitEntry.COLUMN_HABIT_NUMBER, 7);
+
+        long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
+    }
+
+    public void deleteData() {
+        mDbHelper = new HabitDbHelper(this);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        db.delete(HabitEntry.TABLE_NAME, null, null);
     }
 }

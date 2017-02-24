@@ -31,12 +31,6 @@ public class HabitDbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-        final String SQL_DELETE_ENTRIES =
-                "DROP TABLE IF EXISTS " + HabitEntry.TABLE_NAME;
-
-        db.execSQL(SQL_DELETE_ENTRIES);
-        onCreate(db);
+        //No upgrade at this time
     }
-
 }
