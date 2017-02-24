@@ -18,11 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddHabitActivity"
-            android:label="@string/add_habit_layout_name"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+        <activity android:name=".AddHabitActivity"></activity>
     </application>
 
 </manifest>
