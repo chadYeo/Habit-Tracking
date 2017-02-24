@@ -24,7 +24,7 @@ public class HabitDbHelper extends SQLiteOpenHelper{
                         HabitEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         HabitEntry.COLUMN_HABIT_NAME + " TEXT NOT NULL, " +
                         HabitEntry.COLUMN_HABIT_DATE + " TEXT NOT NULL, " +
-                        HabitEntry.COLUMN_HABIT_NUMBER + " INTEGER)";
+                        HabitEntry.COLUMN_HABIT_NUMBER + " INTEGER NOT NULL)";
 
         db.execSQL(SQL_CREATE_ENTRIES);
     }
