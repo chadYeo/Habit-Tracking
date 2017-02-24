@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(HabitEntry.COLUMN_HABIT_NAME, "Dummy Name Test");
-        values.put(HabitEntry.COLUMN_HABIT_DATE, "Dummy Date Test");
+        values.put(HabitEntry.COLUMN_HABIT_NAME, "Dumb Dumb");
+        values.put(HabitEntry.COLUMN_HABIT_DATE, "77/77/7777");
         values.put(HabitEntry.COLUMN_HABIT_NUMBER, 7);
 
         long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
