@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddhabitActivity extends AppCompatActivity {
+public class AddHabitActivity extends AppCompatActivity {
 
     private EditText mNameEditText;
 
@@ -26,7 +26,7 @@ public class AddhabitActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addhabit);
+        setContentView(R.layout.activity_addHabit);
     }
 
     public void onSaveButtonClicked(View v) {
@@ -69,7 +69,7 @@ public class AddhabitActivity extends AppCompatActivity {
     }
 
     public void onCancelButtonClicked(View v) {
-        Intent intent = new Intent(AddhabitActivity.this, MainActivity.class);
+        Intent intent = new Intent(AddHabitActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
